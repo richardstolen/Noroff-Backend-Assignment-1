@@ -43,6 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Heroes\Mage.cs" />
+    <Compile Include="Items\Armor.cs" />
+    <Compile Include="Items\Weapon.cs" />
+    <Compile Include="Items\ArmorType.cs" />
+    <Compile Include="Heroes\Hero.cs" />
+    <Compile Include="Heroes\HeroAttribute.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\WeaponType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

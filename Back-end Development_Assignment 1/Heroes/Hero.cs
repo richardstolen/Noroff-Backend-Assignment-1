@@ -15,6 +15,7 @@ namespace Back_end_Development_Assignment_1
         public List<WeaponType> ValidWeaponTypes { get; set; }
         public List<ArmorType> ValidArmorTypes { get; set; }
 
+        public Hero() { }
         public Hero(string name)
         {
             Name = name;

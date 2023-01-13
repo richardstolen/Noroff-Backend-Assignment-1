@@ -8,6 +8,10 @@ namespace Back_end_Development_Assignment_1.Heroes
 {
     public class Mage : Hero
     {
+        public Mage()
+        {
+            LevelAttributes = new HeroAttribute(1, 1, 6);
+        }
         public Mage(string name) : base(name)
         {
             LevelAttributes = new HeroAttribute(1, 1, 6);
