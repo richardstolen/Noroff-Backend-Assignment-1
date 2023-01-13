@@ -2,7 +2,7 @@
 {
     public enum WeaponType
     {
-        Äxes,
+        Axes,
         Bows,
         Daggers,
         Hammers,
