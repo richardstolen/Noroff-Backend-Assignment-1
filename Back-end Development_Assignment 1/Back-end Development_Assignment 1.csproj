@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Heroes\Mage.cs" />
     <Compile Include="Items\Armor.cs" />
+    <Compile Include="Items\Slot.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Items\ArmorType.cs" />
     <Compile Include="Heroes\Hero.cs" />
