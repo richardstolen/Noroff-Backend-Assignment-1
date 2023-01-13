@@ -11,7 +11,7 @@ namespace Back_end_Development_Assignment_1
         public string Name { get; set; }
         public int Level { get; set; }
         public HeroAttribute LevelAttributes { get; set; }
-        public List<Item> EquippedItems { get; set; }
+        public List<Dictionary<Slot, Item>> EquippedItems { get; set; }
         public List<WeaponType> ValidWeaponTypes { get; set; }
         public List<ArmorType> ValidArmorTypes { get; set; }
 
@@ -39,12 +39,27 @@ namespace Back_end_Development_Assignment_1
 
         public void equipWeapon(Weapon weapon)
         {
-            EquippedItems.Add(weapon);
+            //EquippedItems.Add(weapon);
         }
 
         public void equipArmor(Armor armor)
         {
-            EquippedItems.Add(armor);
+            if (armor.RequiredLevel > Level || !ValidArmorTypes.Contains(armor.ArmorType))
+            {
+                throw new InvalidArmorException();
+            }
+
+            foreach (var item in EquippedItems)
+            {
+                if (item.ContainsKey(armor.Slot))
+                {
+                    EquippedItems.Remove(item);
+                    Dictionary<Slot, Item> newArmor = new Dictionary<Slot, Item>();
+                    newArmor.Add(armor.Slot, armor);
+                    EquippedItems.Add(newArmor);
+                }
+            }
+            //EquippedItems.Add(armor);
         }
 
         public abstract void damage();

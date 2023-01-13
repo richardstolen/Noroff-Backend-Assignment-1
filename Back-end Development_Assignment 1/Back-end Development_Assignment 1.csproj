@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Heroes\InvalidArmorException.cs" />
     <Compile Include="Heroes\Mage.cs" />
     <Compile Include="Items\Armor.cs" />
+    <Compile Include="Items\ArmorAttribute.cs" />
     <Compile Include="Items\Slot.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Items\ArmorType.cs" />

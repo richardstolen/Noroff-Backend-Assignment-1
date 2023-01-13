@@ -33,7 +33,7 @@ namespace Back_end_Development_Assignment_1.Heroes
 
         public override void totalAttributes()
         {
-            throw new NotImplementedException();
+
         }
 
 
