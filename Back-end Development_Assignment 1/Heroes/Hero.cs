@@ -11,7 +11,7 @@ namespace Back_end_Development_Assignment_1
         public string Name { get; set; }
         public int Level { get; set; }
         public HeroAttribute LevelAttributes { get; set; }
-        public List<Item> Items { get; set; }
+        public List<Item> EquippedItems { get; set; }
         public List<WeaponType> ValidWeaponTypes { get; set; }
         public List<ArmorType> ValidArmorTypes { get; set; }
 
@@ -22,6 +22,16 @@ namespace Back_end_Development_Assignment_1
             Level = 1;
         }
 
+        public void setValidArmorTypes(List<ArmorType> armorTypes)
+        {
+            ValidArmorTypes = armorTypes;
+        }
+
+        public void setValidWeaponTypes(List<WeaponType> weaponTypes)
+        {
+            ValidWeaponTypes = weaponTypes;
+        }
+
         public virtual void levelUp()
         {
             Level++;
@@ -29,12 +39,12 @@ namespace Back_end_Development_Assignment_1
 
         public void equipWeapon(Weapon weapon)
         {
-            Items.Add(weapon);
+            EquippedItems.Add(weapon);
         }
 
         public void equipArmor(Armor armor)
         {
-            Items.Add(armor);
+            EquippedItems.Add(armor);
         }
 
         public abstract void damage();
