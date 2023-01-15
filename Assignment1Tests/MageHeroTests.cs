@@ -12,6 +12,18 @@ namespace Assignment1Tests
          */
 
         [Fact]
+        public void Constructor_DefaultAttributes_ShouldBeEqual()
+        {
+            Mage mage = new Mage("test");
+
+            HeroAttribute expectedAttributes = new HeroAttribute(1, 1, 8);
+
+            HeroAttribute actualAttributes = new HeroAttribute(mage.LevelAttributes.Strength, mage.LevelAttributes.Dexterity, mage.LevelAttributes.Intelligence);
+
+            Assert.Equal(expectedAttributes, actualAttributes);
+        }
+
+        [Fact]
         public void Constructor_DefaultStrengthAttribute()
         {
             Mage mage = new Mage("test");
