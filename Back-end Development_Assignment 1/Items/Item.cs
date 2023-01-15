@@ -18,5 +18,10 @@ namespace Back_end_Development_Assignment_1
             RequiredLevel = requiredLevel;
             Slot = slot;
         }
+
+        public override string ToString()
+        {
+            return $"Name: {Name}\n      Required Level: {RequiredLevel}";
+        }
     }
 }

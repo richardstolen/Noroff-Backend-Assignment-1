@@ -14,9 +14,9 @@ namespace Back_end_Development_Assignment_1.Items
 
         public ArmorAttribute()
         {
-            Strength = 1;
-            Dexterity = 1;
-            Intelligence = 1;
+            Strength = 0;
+            Dexterity = 0;
+            Intelligence = 0;
         }
 
         public ArmorAttribute(int strength, int dexterity, int intelligence)
