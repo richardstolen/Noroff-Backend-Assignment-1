@@ -7,8 +7,12 @@ namespace Assignment1Tests
 {
     public class MageHeroTests
     {
+        /*
+         * Tests related to the default attributes when creating a hero
+         */
+
         [Fact]
-        public void Assert_MageDefaultStrengthAttribute()
+        public void Constructor_DefaultStrengthAttribute()
         {
             Mage mage = new Mage("test");
 
@@ -17,7 +21,7 @@ namespace Assignment1Tests
             Assert.Equal(mage.LevelAttributes.Strength, expectedStrength);
         }
         [Fact]
-        public void Assert_MageDefaultDexterityAttribute()
+        public void Constructor_DefaultDexterityAttribute()
         {
             Mage mage = new Mage("test");
 
@@ -26,17 +30,34 @@ namespace Assignment1Tests
             Assert.Equal(mage.LevelAttributes.Dexterity, expectedDexterity);
         }
         [Fact]
-        public void Assert_MageDefaultIntelligenceAttribute()
+        public void Constructor_DefaultIntelligenceAttribute()
         {
             Mage mage = new Mage("test");
 
-            int expectedIntelligence = 6;
+            int expectedIntelligence = 8;
 
             Assert.Equal(mage.LevelAttributes.Intelligence, expectedIntelligence);
         }
 
+        /*
+         * Tests related to check if attributes after leveling up are correct
+         */
+
         [Fact]
-        public void Assert_MageValidWeaponTypes_ShouldBeEqual()
+        public void LevelUp_UpdatedStrengthAttribute()
+        {
+            Mage mage = new Mage("test");
+
+            mage.levelUp();
+
+            int expectedStrength = 2;
+
+            Assert.Equal(mage.LevelAttributes.Strength, expectedStrength);
+        }
+
+
+        [Fact]
+        public void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual()
         {
             Mage mage = new Mage("test");
 
@@ -44,6 +65,13 @@ namespace Assignment1Tests
 
             Assert.Equal(mage.ValidWeaponTypes, exceptedWeapons);
         }
+
+
+
+
+        /*
+         * Tests related to checking if the hero can (or cannot) equip armor and weapons
+         */
 
         [Fact]
         public void equipArmor_EquipInvalidArmorType_ShouldThrowInvalidArmorException()

@@ -10,7 +10,7 @@ namespace Back_end_Development_Assignment_1.Heroes
     {
         public Mage(string name) : base(name)
         {
-            LevelAttributes = new HeroAttribute(1, 1, 6);
+            LevelAttributes = new HeroAttribute(1, 1, 8);
             setValidArmorTypes(new List<ArmorType>() { ArmorType.Cloth });
             setValidWeaponTypes(new List<WeaponType>() { WeaponType.Staffs, WeaponType.Wands });
         }
@@ -26,15 +26,9 @@ namespace Back_end_Development_Assignment_1.Heroes
             throw new NotImplementedException();
         }
 
-        public override void displayHero()
-        {
-            throw new NotImplementedException();
-        }
 
-        public override void totalAttributes()
-        {
 
-        }
+
 
 
     }

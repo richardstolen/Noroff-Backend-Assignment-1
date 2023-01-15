@@ -1,4 +1,6 @@
-﻿namespace Back_end_Development_Assignment_1
+﻿using Back_end_Development_Assignment_1.Items;
+
+namespace Back_end_Development_Assignment_1
 {
     public class HeroAttribute
     {
@@ -25,6 +27,12 @@
             Strength += strength;
             Dexterity += dexterity;
             Intelligence += intelligence;
+        }
+
+        public HeroAttribute addArmorAttribute(ArmorAttribute attribute)
+        {
+            return new HeroAttribute(Strength + attribute.Strength, Dexterity + attribute.Dexterity
+                , Intelligence + attribute.Intelligence);
         }
     }
 }
