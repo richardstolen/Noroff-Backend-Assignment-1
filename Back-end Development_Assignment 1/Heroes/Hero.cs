@@ -1,7 +1,9 @@
-﻿using Back_end_Development_Assignment_1.Items;
+﻿using Back_end_Development_Assignment_1.Heroes;
+using Back_end_Development_Assignment_1.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,22 +55,31 @@ namespace Back_end_Development_Assignment_1
         /// <exception cref="InvalidArmorException"></exception>
         public void equipArmor(Armor armor)
         {
-            if (armor.RequiredLevel > Level || !ValidArmorTypes.Contains(armor.ArmorType))
+            try
             {
-                throw new InvalidArmorException();
-            }
-
-            foreach (var item in EquippedItems)
-            {
-                if (item.ContainsKey(armor.Slot))
+                if (armor.RequiredLevel > Level || !ValidArmorTypes.Contains(armor.ArmorType))
                 {
-                    //EquippedItems.Remove(item);
-                    //Dictionary<Slot, Item> newArmor = new Dictionary<Slot, Item>();
-                    //newArmor.Add(armor.Slot, armor);
-                    //EquippedItems.Add(newArmor);
-                    item[armor.Slot] = armor;
+                    throw new InvalidArmorException();
+                }
+                foreach (var item in EquippedItems)
+                {
+                    if (item.ContainsKey(armor.Slot))
+                    {
+                        item[armor.Slot] = armor;
+                    }
                 }
             }
+            catch (InvalidArmorException e) when (armor.RequiredLevel > Level)
+            {
+                throw new InvalidArmorException("Your hero level is too low for this item", e);
+            }
+            catch (InvalidArmorException e) when (!ValidArmorTypes.Contains(armor.ArmorType))
+            {
+                throw new InvalidArmorException("Your hero can't wear this item", e);
+            }
+
+
+
 
         }
 
