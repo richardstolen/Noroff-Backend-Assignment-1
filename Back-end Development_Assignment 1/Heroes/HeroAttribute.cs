@@ -34,5 +34,10 @@ namespace Back_end_Development_Assignment_1
             return new HeroAttribute(Strength + attribute.Strength, Dexterity + attribute.Dexterity
                 , Intelligence + attribute.Intelligence);
         }
+
+        public override string ToString()
+        {
+            return $"Strength: {Strength}\nDexterity: {Dexterity}\nIntelligence: {Intelligence}";
+        }
     }
 }

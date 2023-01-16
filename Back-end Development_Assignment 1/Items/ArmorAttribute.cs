@@ -25,5 +25,10 @@ namespace Back_end_Development_Assignment_1.Items
             Dexterity = dexterity;
             Intelligence = intelligence;
         }
+
+        public override string ToString()
+        {
+            return $"Strength: {Strength}\nDexterity: {Dexterity}\nIntelligence: {Intelligence}";
+        }
     }
 }

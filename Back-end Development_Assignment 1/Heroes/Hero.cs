@@ -75,18 +75,41 @@ namespace Back_end_Development_Assignment_1
         public abstract void damage();
         public void totalAttributes()
         {
-            ArmorAttribute temp = new ArmorAttribute();
-            //foreach (var dict in EquippedItems)
-            //{
-            //    if (dict.ContainsKey(Slot.Head))
-            //    {
-            //        foreach (var item in dict)
-            //        {
-            //            temp.Strength += item.Value.ArmorAttribute.Strength;
-            //        }
-            //    }
-            //}
+            HeroAttribute temp = LevelAttributes;
 
+            foreach (var dict in EquippedItems)
+            {
+                Slot slot = dict.Keys.First();
+                Console.WriteLine(slot.ToString());
+
+                //if (slot.Equals(Slot.Head) || slot.Equals(Slot.Body) || slot.Equals(Slot.Legs))
+                //{
+
+
+                //    Armor armor = (Armor)dict[slot];
+                //    Console.WriteLine(armor.ToString());
+                //}
+
+                if (dict.ContainsKey(Slot.Head))
+                {
+                    //Armor headArmor = (Armor)dict[Slot.Head];
+                    //temp.addArmorAttribute(headArmor.ArmorAttribute);
+
+                }
+
+                if (dict.ContainsKey(Slot.Body))
+                {
+                    Armor bodyArmor = (Armor)dict[Slot.Body];
+                    temp.addArmorAttribute(bodyArmor.ArmorAttribute);
+                }
+
+                if (dict.ContainsKey(Slot.Legs))
+                {
+                    Armor legArmor = (Armor)dict[Slot.Legs];
+                    temp.addArmorAttribute(legArmor.ArmorAttribute);
+                }
+            }
+            Console.WriteLine(temp.ToString());
         }
         public virtual void displayHero()
         {
