@@ -48,6 +48,8 @@
     <Compile Include="Heroes\InvalidArmorException.cs" />
     <Compile Include="Heroes\Ranger.cs" />
     <Compile Include="Heroes\Mage.cs" />
+    <Compile Include="Heroes\Warrior.cs" />
+    <Compile Include="Heroes\Rogue.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\ArmorAttribute.cs" />
     <Compile Include="Items\Slot.cs" />

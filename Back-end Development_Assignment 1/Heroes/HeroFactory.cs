@@ -18,13 +18,18 @@ namespace Back_end_Development_Assignment_1.Heroes
             {
                 return new Ranger(name);
             }
-            else
+            else if (heroClass == HeroClasses.Rogue)
             {
-                return new Mage(name);
+                return new Rogue(name);
             }
+            else
+
+                return new Warrior(name);
         }
     }
-
-
 }
+
+
+
+
 
