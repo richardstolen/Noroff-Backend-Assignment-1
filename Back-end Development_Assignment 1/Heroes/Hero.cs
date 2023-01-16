@@ -73,43 +73,22 @@ namespace Back_end_Development_Assignment_1
         }
 
         public abstract void damage();
-        public void totalAttributes()
+        public HeroAttribute totalAttributes()
         {
-            HeroAttribute temp = LevelAttributes;
+            HeroAttribute attributesWithArmor = LevelAttributes;
 
             foreach (var dict in EquippedItems)
             {
                 Slot slot = dict.Keys.First();
-                Console.WriteLine(slot.ToString());
 
-                //if (slot.Equals(Slot.Head) || slot.Equals(Slot.Body) || slot.Equals(Slot.Legs))
-                //{
-
-
-                //    Armor armor = (Armor)dict[slot];
-                //    Console.WriteLine(armor.ToString());
-                //}
-
-                if (dict.ContainsKey(Slot.Head))
+                if (slot.Equals(Slot.Head) || slot.Equals(Slot.Body) || slot.Equals(Slot.Legs))
                 {
-                    //Armor headArmor = (Armor)dict[Slot.Head];
-                    //temp.addArmorAttribute(headArmor.ArmorAttribute);
-
+                    Armor armor = (Armor)dict[slot];
+                    attributesWithArmor.addArmorAttribute(armor.ArmorAttribute);
                 }
 
-                if (dict.ContainsKey(Slot.Body))
-                {
-                    Armor bodyArmor = (Armor)dict[Slot.Body];
-                    temp.addArmorAttribute(bodyArmor.ArmorAttribute);
-                }
-
-                if (dict.ContainsKey(Slot.Legs))
-                {
-                    Armor legArmor = (Armor)dict[Slot.Legs];
-                    temp.addArmorAttribute(legArmor.ArmorAttribute);
-                }
             }
-            Console.WriteLine(temp.ToString());
+            return attributesWithArmor;
         }
         public virtual void displayHero()
         {
@@ -136,7 +115,7 @@ namespace Back_end_Development_Assignment_1
 
 
         /// <summary>
-        /// Initialize the equipped item list with correct slots but without any armor or weapon
+        /// Initialize the equipped item list with correct slots and with starter gear that every class can use
         /// Used in the constructor
         /// </summary>
         public void equippedItemsInit()
@@ -145,19 +124,19 @@ namespace Back_end_Development_Assignment_1
             {
                 new Dictionary<Slot, Item>()
                 {
-                    {Slot.Head, null }
+                    {Slot.Head, new Armor("Starter Head", 1, Slot.Head, ArmorType.Cloth, new ArmorAttribute(1, 1, 1)) }
                 },
                 new Dictionary<Slot, Item>()
                 {
-                    {Slot.Body, null }
+                    {Slot.Body, new Armor("Starter Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(1, 1, 1)) }
                 },
                 new Dictionary<Slot, Item>()
                 {
-                    {Slot.Legs, null }
+                    {Slot.Legs, new Armor("Starter Legs", 1, Slot.Legs, ArmorType.Cloth, new ArmorAttribute(1, 1, 1)) }
                 },
                 new Dictionary<Slot, Item>()
                 {
-                    {Slot.Weapon, null }
+                    {Slot.Weapon, new Weapon("Starter Weapon", 1, Slot.Weapon, WeaponType.Unarmed, 1) }
                 },
             };
         }

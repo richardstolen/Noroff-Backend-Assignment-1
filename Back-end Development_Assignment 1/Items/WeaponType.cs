@@ -8,6 +8,7 @@
         Hammers,
         Staffs,
         Swords,
-        Wands
+        Wands,
+        Unarmed
     }
 }

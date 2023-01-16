@@ -29,10 +29,11 @@ namespace Back_end_Development_Assignment_1
             Intelligence += intelligence;
         }
 
-        public HeroAttribute addArmorAttribute(ArmorAttribute attribute)
+        public void addArmorAttribute(ArmorAttribute attribute)
         {
-            return new HeroAttribute(Strength + attribute.Strength, Dexterity + attribute.Dexterity
-                , Intelligence + attribute.Intelligence);
+            this.Strength += attribute.Strength;
+            this.Dexterity += attribute.Dexterity;
+            this.Intelligence += attribute.Intelligence;
         }
 
         public override string ToString()

@@ -19,15 +19,17 @@ namespace Back_end_Development_Assignment_1
             Armor legs = new Armor("Common Cloth Legs", 1, Slot.Legs, ArmorType.Cloth, new ArmorAttribute(1, 5, 0));
             mage.equipArmor(legs);
             Hero hero = mage;
-            hero.displayHero();
+
 
             Armor armor2 = new Armor("Rare Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(1, 0, 6));
             //mage.equipArmor(armor2);
             //Console.WriteLine(mage);
             //Console.ReadLine();
+            mage.levelUp();
+
             mage.displayHero();
 
-            mage.totalAttributes();
+
         }
     }
 }
