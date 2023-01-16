@@ -20,16 +20,5 @@ namespace Back_end_Development_Assignment_1.Heroes
             base.levelUp();
             LevelAttributes.levelUp(1, 1, 5);
         }
-
-        public override void damage()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-
-
-
     }
 }

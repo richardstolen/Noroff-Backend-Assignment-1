@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Back_end_Development_Assignment_1
 {
@@ -100,7 +102,45 @@ namespace Back_end_Development_Assignment_1
             }
         }
 
-        public abstract void damage();
+        public void damage()
+        {
+            Weapon weapon = null;
+            foreach (var dict in EquippedItems)
+            {
+                if (dict.TryGetValue(Slot.Weapon, out Item item))
+                {
+                    weapon = (Weapon)item;
+                }
+            }
+
+            HeroAttribute attributes = totalAttributes();
+            double damage = calculateDamage(weapon, attributes);
+            Console.WriteLine($"\nYou did {damage} damage");
+        }
+
+        private double calculateDamage(Weapon weapon, HeroAttribute attributes)
+        {
+            var heroClass = Enum.Parse(typeof(HeroClasses), this.GetType().Name);
+
+            if (heroClass.Equals(HeroClasses.Mage))
+            {
+                return weapon.WeaponDamage * (1 + (attributes.Intelligence / 100.0));
+            }
+            else if (heroClass.Equals(HeroClasses.Ranger))
+            {
+                return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
+            }
+            else if (heroClass.Equals(HeroClasses.Rogue))
+            {
+                return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
+            }
+            else if (heroClass.Equals(HeroClasses.Warrior))
+            {
+                return weapon.WeaponDamage * (1 + (attributes.Strength / 100.0));
+            }
+            return 1;
+        }
+
         public HeroAttribute totalAttributes()
         {
             HeroAttribute attributesWithArmor = LevelAttributes;
@@ -138,6 +178,8 @@ namespace Back_end_Development_Assignment_1
             }
 
             Console.WriteLine(sb);
+
+
         }
 
 
@@ -168,5 +210,8 @@ namespace Back_end_Development_Assignment_1
                 },
             };
         }
+
+
+
     }
 }

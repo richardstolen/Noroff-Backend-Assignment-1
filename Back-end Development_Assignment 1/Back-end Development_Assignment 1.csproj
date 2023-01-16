@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Heroes\HeroClasses.cs" />
     <Compile Include="Heroes\HeroFactory.cs" />
     <Compile Include="Heroes\InvalidArmorException.cs" />
     <Compile Include="Heroes\Ranger.cs" />

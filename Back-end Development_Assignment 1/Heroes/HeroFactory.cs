@@ -8,21 +8,13 @@ namespace Back_end_Development_Assignment_1.Heroes
 {
     public class HeroFactory
     {
-        public enum Classes
+        public static Hero Create(HeroClasses heroClass, string name)
         {
-            Mage,
-            Ranger,
-            Rogue,
-            Warrior
-        }
-
-        public static Hero Create(Classes heroClass, string name)
-        {
-            if (heroClass == Classes.Mage)
+            if (heroClass == HeroClasses.Mage)
             {
                 return new Mage(name);
             }
-            else if (heroClass == Classes.Ranger)
+            else if (heroClass == HeroClasses.Ranger)
             {
                 return new Ranger(name);
             }
