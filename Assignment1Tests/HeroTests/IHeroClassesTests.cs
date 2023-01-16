@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1Tests
+namespace Assignment1Tests.HeroTests
 {
     public interface IHeroClassesTests
     {

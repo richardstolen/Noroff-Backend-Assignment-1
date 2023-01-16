@@ -1,7 +1,7 @@
 using Back_end_Development_Assignment_1;
 using Back_end_Development_Assignment_1.Heroes;
 
-namespace Assignment1Tests
+namespace Assignment1Tests.ItemTests
 {
     public class WeaponTests
     {

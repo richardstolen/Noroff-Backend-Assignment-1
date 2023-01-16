@@ -3,7 +3,7 @@ using Back_end_Development_Assignment_1.Heroes;
 using Back_end_Development_Assignment_1.Items;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Assignment1Tests
+namespace Assignment1Tests.HeroTests
 {
     public class MageTests : IHeroClassesTests
     {
