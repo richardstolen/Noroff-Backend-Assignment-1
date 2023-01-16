@@ -44,7 +44,28 @@ namespace Back_end_Development_Assignment_1
 
         public void equipWeapon(Weapon weapon)
         {
-            //EquippedItems.Add(weapon);
+            try
+            {
+                if (weapon.RequiredLevel > Level || !ValidWeaponTypes.Contains(weapon.WeaponType))
+                {
+                    throw new InvalidArmorException();
+                }
+                foreach (var item in EquippedItems)
+                {
+                    if (item.ContainsKey(weapon.Slot))
+                    {
+                        item[weapon.Slot] = weapon;
+                    }
+                }
+            }
+            catch (InvalidArmorException e) when (weapon.RequiredLevel > Level)
+            {
+                throw new InvalidArmorException("Your hero level is too low for this item", e);
+            }
+            catch (InvalidArmorException e) when (!ValidWeaponTypes.Contains(weapon.WeaponType))
+            {
+                throw new InvalidArmorException("Your hero can't equip this item", e);
+            }
         }
 
 
@@ -77,10 +98,6 @@ namespace Back_end_Development_Assignment_1
             {
                 throw new InvalidArmorException("Your hero can't wear this item", e);
             }
-
-
-
-
         }
 
         public abstract void damage();
