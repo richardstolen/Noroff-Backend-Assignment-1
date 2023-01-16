@@ -63,7 +63,7 @@ namespace Assignment1Tests.HeroTests
         {
             Mage mage = new Mage("test");
 
-            List<WeaponType> exceptedWeapons = new List<WeaponType> { WeaponType.Staffs, WeaponType.Wands };
+            List<WeaponType> exceptedWeapons = new List<WeaponType> { WeaponType.Staff, WeaponType.Wand, WeaponType.Unarmed };
 
             Assert.Equal(mage.ValidWeaponTypes, exceptedWeapons);
         }
@@ -83,6 +83,31 @@ namespace Assignment1Tests.HeroTests
             Armor armor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, new ArmorAttribute(1, 0, 0));
 
             Assert.Throws<InvalidArmorException>(() => mage.equipArmor(armor));
+        }
+
+        public void LevelUp_UpdatedDexterityAttribute()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void LevelUp_UpdatedIntelligenceAttribute()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ValidWeaponTypes_CheckInValidWeaponTypes_ShouldThrowInvalidArmorException()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ValidArmorTypes_CheckValidArmorTypes_ShouldBeEqual()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ValidArmorTypes_CheckInValidArmorTypes_ShouldThrowInvalidArmorException()
+        {
+            throw new NotImplementedException();
         }
     }
 }

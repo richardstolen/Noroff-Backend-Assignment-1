@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Assignment1Tests.HeroTests
 {
-    internal class RangerTests
+    public class RangerTests
     {
+
     }
 }

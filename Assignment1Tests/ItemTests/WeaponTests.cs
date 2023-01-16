@@ -5,7 +5,7 @@ namespace Assignment1Tests.ItemTests
 {
     public class WeaponTests
     {
-        Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axes, 3);
+        Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
 
         [Fact]
         public void Name_AssertCorrectName_ShouldReturnName()

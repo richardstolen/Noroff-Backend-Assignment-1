@@ -14,5 +14,19 @@ namespace Assignment1Tests.HeroTests
         void Constructor_DefaultDexterityAttribute();
         [Fact]
         void Constructor_DefaultIntelligenceAttribute();
+        [Fact]
+        void LevelUp_UpdatedStrengthAttribute();
+        [Fact]
+        void LevelUp_UpdatedDexterityAttribute();
+        [Fact]
+        void LevelUp_UpdatedIntelligenceAttribute();
+        [Fact]
+        void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual();
+        [Fact]
+        void ValidWeaponTypes_CheckInValidWeaponTypes_ShouldThrowInvalidArmorException();
+        [Fact]
+        void ValidArmorTypes_CheckValidArmorTypes_ShouldBeEqual();
+        [Fact]
+        void ValidArmorTypes_CheckInValidArmorTypes_ShouldThrowInvalidArmorException();
     }
 }
