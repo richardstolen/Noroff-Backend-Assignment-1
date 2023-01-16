@@ -21,7 +21,7 @@ namespace Back_end_Development_Assignment_1
 
         public override string ToString()
         {
-            return $"Name: {Name}\n      Required Level: {RequiredLevel}";
+            return $"{Name}\n      Required Level: {RequiredLevel}";
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Back_end_Development_Assignment_1.Heroes
         {
             LevelAttributes = new HeroAttribute(1, 7, 1);
             setValidArmorTypes(new List<ArmorType>() { ArmorType.Leather, ArmorType.Mail });
-            setValidWeaponTypes(new List<WeaponType>() { WeaponType.Bows, WeaponType.Unarmed });
+            setValidWeaponTypes(new List<WeaponType>() { WeaponType.Bow, WeaponType.Unarmed });
         }
 
         public override void levelUp()

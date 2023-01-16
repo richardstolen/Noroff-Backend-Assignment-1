@@ -13,7 +13,7 @@
 
         public override string ToString()
         {
-            return $"Name: {Name}, Weapon damage: {WeaponDamage}";
+            return base.ToString() + $"\n      Weapon type: {WeaponType}\n      Weapon damage: {WeaponDamage}";
         }
     }
 }

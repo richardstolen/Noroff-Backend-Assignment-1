@@ -115,6 +115,7 @@ namespace Back_end_Development_Assignment_1
 
             HeroAttribute attributes = totalAttributes();
             double damage = calculateDamage(weapon, attributes);
+
             Console.WriteLine($"\nYou did {damage} damage");
         }
 
@@ -160,14 +161,15 @@ namespace Back_end_Development_Assignment_1
         }
         public virtual void displayHero()
         {
+            HeroAttribute attributes = totalAttributes();
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Name: " + Name);
             sb.AppendLine("Class: " + this.GetType().Name);
             sb.AppendLine("Level: " + Level);
-            sb.AppendLine("Total Strength: " + LevelAttributes.Strength);
-            sb.AppendLine("Total Dexterity: " + LevelAttributes.Dexterity);
-            sb.AppendLine("Total Intelligence: " + LevelAttributes.Intelligence);
-            sb.AppendLine("Equipped items: \n");
+            sb.AppendLine("Total Strength: " + attributes.Strength);
+            sb.AppendLine("Total Dexterity: " + attributes.Dexterity);
+            sb.AppendLine("Total Intelligence: " + attributes.Intelligence);
+            sb.AppendLine("\nEquipped items: \n");
 
             foreach (var dict in EquippedItems)
             {

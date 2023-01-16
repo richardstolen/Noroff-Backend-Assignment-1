@@ -12,5 +12,13 @@ namespace Back_end_Development_Assignment_1
             ArmorType = armorType;
             ArmorAttribute = armorAttribute;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"\n      Armor type: {ArmorType}" +
+                $"\n      Strength: {ArmorAttribute.Strength}" +
+                $"\n      Dexterity: {ArmorAttribute.Dexterity}" +
+                $"\n      Intelligence: {ArmorAttribute.Intelligence}";
+        }
     }
 }
