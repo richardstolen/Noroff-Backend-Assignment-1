@@ -58,4 +58,4 @@
 
 
 
-![alt text](img/markdown_logo.png "Title Text")
+![alt text](assignment1_character_selection_screen.png "Title Text")
