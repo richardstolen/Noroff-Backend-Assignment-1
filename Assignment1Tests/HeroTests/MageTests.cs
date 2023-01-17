@@ -8,39 +8,39 @@ namespace Assignment1Tests.HeroTests
     public class MageTests
     {
         /*
-         * Tests related to the default attributes when creating a hero
+         * Tests for unique classes testing the unique default attributes and 
+         * new attributes when leveling up
+         * Related to Appendix C: 1) and 2)
          */
-
-
 
         [Fact]
         public void Constructor_DefaultStrengthAttribute()
         {
-            Mage mage = new Mage("test");
+            var hero = new Mage("test");
 
             int expected = 1;
 
-            Assert.Equal(mage.LevelAttributes.Strength, expected);
+            Assert.Equal(hero.LevelAttributes.Strength, expected);
         }
 
         [Fact]
         public void Constructor_DefaultDexterityAttribute()
         {
-            Mage mage = new Mage("test");
+            var hero = new Mage("test");
 
             int expected = 1;
 
-            Assert.Equal(mage.LevelAttributes.Dexterity, expected);
+            Assert.Equal(hero.LevelAttributes.Dexterity, expected);
         }
 
         [Fact]
         public void Constructor_DefaultIntelligenceAttribute()
         {
-            Mage mage = new Mage("test");
+            var hero = new Mage("test");
 
             int expected = 8;
 
-            Assert.Equal(mage.LevelAttributes.Intelligence, expected);
+            Assert.Equal(hero.LevelAttributes.Intelligence, expected);
         }
 
         /*
@@ -50,43 +50,61 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void LevelUp_UpdatedStrengthAttribute()
         {
-            Mage mage = new Mage("test");
+            var hero = new Mage("test");
 
-            mage.levelUp();
+            hero.levelUp();
 
             int expected = 2;
 
-            Assert.Equal(mage.LevelAttributes.Strength, expected);
+            Assert.Equal(hero.LevelAttributes.Strength, expected);
         }
-
 
         [Fact]
-        public void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual()
+        public void LevelUp_UpdatedDexterityAttribute()
         {
-            Mage mage = new Mage("test");
+            var hero = new Mage("test");
 
-            List<WeaponType> exceptedWeapons = new List<WeaponType> { WeaponType.Staff, WeaponType.Wand, WeaponType.Unarmed };
+            hero.levelUp();
 
-            Assert.Equal(mage.ValidWeaponTypes, exceptedWeapons);
+            int expected = 2;
+
+            Assert.Equal(hero.LevelAttributes.Dexterity, expected);
         }
 
+        [Fact]
+        public void LevelUp_UpdatedIntelligenceAttribute()
+        {
+            var hero = new Mage("test");
 
+            hero.levelUp();
 
+            int expected = 13;
+
+            Assert.Equal(hero.LevelAttributes.Intelligence, expected);
+        }
 
         /*
          * Tests related to checking if the hero can (or cannot) equip armor and weapons
          */
 
         [Fact]
-        public void equipArmor_EquipInvalidArmorType_ShouldThrowInvalidArmorException()
+        public void ValidArmorTypes_CheckValidArmorTypes_ShouldBeEqual()
         {
-            Mage mage = new Mage("test");
+            var hero = new Mage("test");
 
-            Armor armor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, new ArmorAttribute(1, 0, 0));
+            List<ArmorType> expected = new List<ArmorType> { ArmorType.Cloth };
 
-            Assert.Throws<InvalidArmorException>(() => mage.equipArmor(armor));
+            Assert.Equal(hero.ValidArmorTypes, expected);
         }
 
+        [Fact]
+        public void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
 
+            List<WeaponType> expected = new List<WeaponType> { WeaponType.Staff, WeaponType.Wand, WeaponType.Unarmed };
+
+            Assert.Equal(hero.ValidWeaponTypes, expected);
+        }
     }
 }
