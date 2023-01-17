@@ -18,7 +18,7 @@ namespace Back_end_Development_Assignment_1
             mage.equipArmor(chest);
             Armor legs = new Armor("Common Cloth Legs", 1, Slot.Legs, ArmorType.Cloth, new ArmorAttribute(1, 5, 0));
             mage.equipArmor(legs);
-            Hero hero = mage;
+
 
 
 

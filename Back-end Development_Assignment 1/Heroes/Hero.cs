@@ -72,7 +72,7 @@ namespace Back_end_Development_Assignment_1
 
 
         /// <summary>
-        /// 
+        /// Equips a new armor in the correct slot, replacing the old one
         /// </summary>
         /// <param name="armor"></param>
         /// <exception cref="InvalidArmorException"></exception>
@@ -180,14 +180,12 @@ namespace Back_end_Development_Assignment_1
             }
 
             Console.WriteLine(sb);
-
-
         }
 
 
 
         /// <summary>
-        /// Initialize the equipped item list with correct slots and with starter gear that every class can use
+        /// Initialize the equipped item list with correct slots and with starter gear that every class can use.
         /// Used in the constructor
         /// </summary>
         public void equippedItemsInit()

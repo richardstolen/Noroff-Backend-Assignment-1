@@ -18,27 +18,27 @@ namespace Assignment1Tests.HeroTests
         {
             Mage mage = new Mage("test");
 
-            int expectedStrength = 1;
+            int expected = 1;
 
-            Assert.Equal(mage.LevelAttributes.Strength, expectedStrength);
+            Assert.Equal(mage.LevelAttributes.Strength, expected);
         }
         [Fact]
         public void Constructor_DefaultDexterityAttribute()
         {
             Mage mage = new Mage("test");
 
-            int expectedDexterity = 1;
+            int expected = 1;
 
-            Assert.Equal(mage.LevelAttributes.Dexterity, expectedDexterity);
+            Assert.Equal(mage.LevelAttributes.Dexterity, expected);
         }
         [Fact]
         public void Constructor_DefaultIntelligenceAttribute()
         {
             Mage mage = new Mage("test");
 
-            int expectedIntelligence = 8;
+            int expected = 8;
 
-            Assert.Equal(mage.LevelAttributes.Intelligence, expectedIntelligence);
+            Assert.Equal(mage.LevelAttributes.Intelligence, expected);
         }
 
         /*
@@ -52,9 +52,9 @@ namespace Assignment1Tests.HeroTests
 
             mage.levelUp();
 
-            int expectedStrength = 2;
+            int expected = 2;
 
-            Assert.Equal(mage.LevelAttributes.Strength, expectedStrength);
+            Assert.Equal(mage.LevelAttributes.Strength, expected);
         }
 
 
