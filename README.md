@@ -30,7 +30,7 @@
 ### Appendix C: Unit Testing
 
 1. [ ] Introduction and overview
-      - [ ] When a Hero is created, it needs to have the correct name, level, and attributes
+      - [x] When a Hero is created, it needs to have the correct name, level, and attributes
       - [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes
          - [ ] Creation and leveling tests need to be written for each sub class
          - [ ] A test to see if HeroAttribute is being added/increased correctly should also be written
