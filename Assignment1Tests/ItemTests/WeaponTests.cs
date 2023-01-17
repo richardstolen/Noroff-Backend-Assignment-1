@@ -5,16 +5,55 @@ namespace Assignment1Tests.ItemTests
 {
     public class WeaponTests
     {
-        Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
 
         [Fact]
-        public void Name_AssertCorrectName_ShouldReturnName()
+        public void Constructor_AssertCorrectName_ShouldBeEqual()
         {
-            string excepted = "Common Axe";
+            Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
 
-            Assert.Equal(weapon.Name, excepted);
+            string expected = "Common Axe";
+
+            Assert.Equal(weapon.Name, expected);
         }
 
+        [Fact]
+        public void Constructor_AssertCorrectRequiredLevel_ShouldBeEqual()
+        {
+            Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
 
+            int expected = 2;
+
+            Assert.Equal(weapon.RequiredLevel, expected);
+        }
+
+        [Fact]
+        public void Constructor_AssertCorrectSlot_ShouldBeEqual()
+        {
+            Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
+
+            Slot expected = Slot.Weapon;
+
+            Assert.Equal(weapon.Slot, expected);
+        }
+
+        [Fact]
+        public void Constructor_AssertCorrectWeaponType_ShouldBeEqual()
+        {
+            Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
+
+            WeaponType expected = WeaponType.Axe;
+
+            Assert.Equal(weapon.WeaponType, expected);
+        }
+
+        [Fact]
+        public void Constructor_AssertCorrectWeaponDamage_ShouldBeEqual()
+        {
+            Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
+
+            int expected = 3;
+
+            Assert.Equal(weapon.WeaponDamage, expected);
+        }
     }
 }
