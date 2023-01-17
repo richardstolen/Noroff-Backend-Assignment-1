@@ -91,9 +91,9 @@ namespace Back_end_Development_Assignment_1
                     }
                 }
             }
-            catch (InvalidArmorException e) when (armor.RequiredLevel > Level)
+            catch (InvalidArmorException) when (armor.RequiredLevel > Level)
             {
-                throw new InvalidArmorException("Your hero level is too low for this item", e);
+                throw new InvalidArmorException("Your hero level is too low for this item");
             }
             catch (InvalidArmorException e) when (!ValidArmorTypes.Contains(armor.ArmorType))
             {
