@@ -30,25 +30,25 @@
 ### Appendix C: Unit Testing
 
 1. [ ] Introduction and overview
-      - [ ] When a Hero is created, it needs to have the correct name, level, and attributes
-      - [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes
-         - [ ] Creation and leveling tests need to be written for each sub class
-         - [ ] A test to see if HeroAttribute is being added/increased correctly should also be written
-      - [x] When Weapon is created, it needs to have the correct name, required level, slot, weapon type, and damage
-      - [x] When Armor is created, it needs to have the correct name, required level, slot, armor type, and armor attributes
-      - [ ] A Hero should be able to equip a Weapon, the appropriate exceptions should be thrown if invalid (level requirement and type)
-      - [ ] A Hero should be able to equip Armor, the appropriate exceptions should be thrown if invalid (level requirement and type)
-      - [ ] Total attributes should be calculated correctly
-         - [ ] With no equipment
-         - [ ] With one piece of armor
-         - [ ] With two pieces of armor
-         - [ ] With a replaced piece of armor (equip armor, then equip new armor in the same slot)
-      - [ ] Hero damage should be calculated properly
-         - [ ] No weapon equipped
-         - [ ] Weapon equipped
-         - [ ] Replaced weapon equipped (equip a weapon then equip a new weapon)
-         - [ ] Weapon and armor equipped
-      - [ ] Heroes should display their state correctly
+      1. [x] When a Hero is created, it needs to have the correct name, level, and attributes
+      2. [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes
+         1. [ ] Creation and leveling tests need to be written for each sub class
+         2. [ ] A test to see if HeroAttribute is being added/increased correctly should also be written
+      3. [x] When Weapon is created, it needs to have the correct name, required level, slot, weapon type, and damage
+      4. [x] When Armor is created, it needs to have the correct name, required level, slot, armor type, and armor attributes
+      5. [ ] A Hero should be able to equip a Weapon, the appropriate exceptions should be thrown if invalid (level requirement and type)
+      6. [ ] A Hero should be able to equip Armor, the appropriate exceptions should be thrown if invalid (level requirement and type)
+      7. [ ] Total attributes should be calculated correctly
+         1. [ ] With no equipment
+         2. [ ] With one piece of armor
+         3. [ ] With two pieces of armor
+         4. [ ] With a replaced piece of armor (equip armor, then equip new armor in the same slot)
+      8. [ ] Hero damage should be calculated properly
+         1. [ ] No weapon equipped
+         2. [ ] Weapon equipped
+         3. [ ] Replaced weapon equipped (equip a weapon then equip a new weapon)
+         4. [ ] Weapon and armor equipped
+      9. [x] Heroes should display their state correctly
 
 2. [ ] Example single test walkthrough
 
