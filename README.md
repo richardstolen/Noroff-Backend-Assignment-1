@@ -55,3 +55,7 @@
 1. [ ] Extending base functionality
 
 2. [ ] Alternative approach
+
+
+
+![alt text](img/markdown_logo.png "Title Text")
