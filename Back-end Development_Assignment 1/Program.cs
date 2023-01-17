@@ -19,7 +19,6 @@ namespace Back_end_Development_Assignment_1
             Armor legs = new Armor("Common Cloth Legs", 1, Slot.Legs, ArmorType.Cloth, new ArmorAttribute(1, 5, 0));
             mage.equipArmor(legs);
 
-            Console.WriteLine(chest.ArmorAttribute.ToString());
 
 
             //Armor armor2 = new Armor("Rare Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(1, 0, 6));
@@ -27,9 +26,9 @@ namespace Back_end_Development_Assignment_1
             ////Console.WriteLine(mage);
             ////Console.ReadLine();
             //mage.equipWeapon(weapon);
-            //mage.displayHero();
+            mage.displayHero();
 
-            //mage.damage();
+            mage.damage();
 
 
         }

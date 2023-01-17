@@ -16,6 +16,7 @@ namespace Assignment1Tests.HeroTests
         /*
          * Tests that are shared between all classes, using mage class as test subject, but every class 
          * can be used.
+         * Mage default attributes: str:1, dex:1, int:8
          */
 
         [Fact]
@@ -90,6 +91,82 @@ namespace Assignment1Tests.HeroTests
             Weapon weapon = new Weapon("Rare Sword", 1, Slot.Weapon, WeaponType.Sword, 5);
 
             Assert.Throws<InvalidArmorException>(() => hero.equipWeapon(weapon));
+        }
+
+
+        /*
+         * ---------------------------------------------------------------------------------------
+         * Tests related to Appendix C: 7
+         * Checking if total attributes are calculated correctly with different types of equipment
+         * and equipment swapping.
+         */
+
+        /// <summary>
+        /// Test related to Appendix C: 7.1
+        /// </summary>
+        [Fact]
+        void TotalAttributes_CalculatingTotalAttributesWithNoEquipment_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            HeroAttribute expected = new HeroAttribute(1, 1, 8);
+
+            Assert.Equal(expected.ToString(), hero.totalAttributes().ToString());
+        }
+
+        /// <summary>
+        /// Test related to Appendix C: 7.2
+        /// </summary>
+        [Fact]
+        void TotalAttributes_CalculatingTotalAttributesWithOneArmor_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            Armor armor = new Armor("Common Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(2, 2, 2));
+
+            hero.equipArmor(armor);
+
+            HeroAttribute expected = new HeroAttribute(3, 3, 10);
+
+            Assert.Equal(expected.ToString(), hero.totalAttributes().ToString());
+        }
+
+        /// <summary>
+        /// Test related to Appendix C: 7.3
+        /// </summary>
+        [Fact]
+        void TotalAttributes_CalculatingTotalAttributesWithTwoArmor_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            Armor chest = new Armor("Common Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(2, 2, 2));
+            Armor legs = new Armor("Common Cloth Legs", 1, Slot.Legs, ArmorType.Cloth, new ArmorAttribute(2, 2, 2));
+
+            hero.equipArmor(chest);
+            hero.equipArmor(legs);
+
+            HeroAttribute expected = new HeroAttribute(5, 5, 12);
+
+            Assert.Equal(expected.ToString(), hero.totalAttributes().ToString());
+        }
+
+        /// <summary>
+        /// Test related to Appendix C: 7.4
+        /// </summary>
+        [Fact]
+        void TotalAttributes_CalculatingTotalAttributesWithReplacingArmor_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            Armor commonChest = new Armor("Common Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(2, 2, 2));
+            Armor legendaryChest = new Armor("Legendary Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(4, 4, 4));
+
+            hero.equipArmor(commonChest);
+            hero.equipArmor(legendaryChest);
+
+            HeroAttribute expected = new HeroAttribute(5, 5, 12);
+
+            Assert.Equal(expected.ToString(), hero.totalAttributes().ToString());
         }
     }
 }

@@ -21,12 +21,11 @@ namespace Back_end_Development_Assignment_1
         public List<WeaponType> ValidWeaponTypes { get; set; }
         public List<ArmorType> ValidArmorTypes { get; set; }
 
-        public Hero() { }
         public Hero(string name)
         {
             Name = name;
             Level = 1;
-            equippedItemsInit();
+            equipNoItems();
         }
 
         public void setValidArmorTypes(List<ArmorType> armorTypes)
@@ -123,22 +122,26 @@ namespace Back_end_Development_Assignment_1
         {
             var heroClass = Enum.Parse(typeof(HeroClasses), this.GetType().Name);
 
-            if (heroClass.Equals(HeroClasses.Mage))
+            if (weapon != null)
             {
-                return weapon.WeaponDamage * (1 + (attributes.Intelligence / 100.0));
+                if (heroClass.Equals(HeroClasses.Mage))
+                {
+                    return weapon.WeaponDamage * (1 + (attributes.Intelligence / 100.0));
+                }
+                else if (heroClass.Equals(HeroClasses.Ranger))
+                {
+                    return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
+                }
+                else if (heroClass.Equals(HeroClasses.Rogue))
+                {
+                    return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
+                }
+                else if (heroClass.Equals(HeroClasses.Warrior))
+                {
+                    return weapon.WeaponDamage * (1 + (attributes.Strength / 100.0));
+                }
             }
-            else if (heroClass.Equals(HeroClasses.Ranger))
-            {
-                return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
-            }
-            else if (heroClass.Equals(HeroClasses.Rogue))
-            {
-                return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
-            }
-            else if (heroClass.Equals(HeroClasses.Warrior))
-            {
-                return weapon.WeaponDamage * (1 + (attributes.Strength / 100.0));
-            }
+
             return 1;
         }
 
@@ -150,10 +153,13 @@ namespace Back_end_Development_Assignment_1
             {
                 Slot slot = dict.Keys.First();
 
-                if (slot.Equals(Slot.Head) || slot.Equals(Slot.Body) || slot.Equals(Slot.Legs))
+                if (slot.Equals(Slot.Head) || slot.Equals(Slot.Body) || slot.Equals(Slot.Legs) && dict.ContainsKey(slot))
                 {
                     Armor armor = (Armor)dict[slot];
-                    attributesWithArmor.addArmorAttribute(armor.ArmorAttribute);
+                    if (armor != null)
+                    {
+                        attributesWithArmor.addArmorAttribute(armor.ArmorAttribute);
+                    }
                 }
 
             }
@@ -188,7 +194,7 @@ namespace Back_end_Development_Assignment_1
         /// Initialize the equipped item list with correct slots and with starter gear that every class can use.
         /// Used in the constructor
         /// </summary>
-        public void equippedItemsInit()
+        public void equipItemsStarterGear()
         {
             EquippedItems = new List<Dictionary<Slot, Item>>()
             {
@@ -211,7 +217,28 @@ namespace Back_end_Development_Assignment_1
             };
         }
 
-
+        public void equipNoItems()
+        {
+            EquippedItems = new List<Dictionary<Slot, Item>>()
+            {
+                new Dictionary<Slot, Item>()
+                {
+                    {Slot.Head, null }
+                },
+                new Dictionary<Slot, Item>()
+                {
+                    {Slot.Body, null }
+                },
+                new Dictionary<Slot, Item>()
+                {
+                    {Slot.Legs, null }
+                },
+                new Dictionary<Slot, Item>()
+                {
+                    {Slot.Weapon, null }
+                },
+            };
+        }
 
     }
 }

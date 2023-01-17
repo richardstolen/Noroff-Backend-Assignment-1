@@ -1,5 +1,6 @@
 using Back_end_Development_Assignment_1;
 using Back_end_Development_Assignment_1.Heroes;
+using Back_end_Development_Assignment_1.Items;
 
 namespace Assignment1Tests.ItemTests
 {
@@ -54,6 +55,17 @@ namespace Assignment1Tests.ItemTests
             int expected = 3;
 
             Assert.Equal(weapon.WeaponDamage, expected);
+        }
+
+        [Fact]
+        void ToString_AssertCorrectOutputToString_ShouldBeEqual()
+        {
+            Weapon weapon = new Weapon("Common Axe", 2, Slot.Weapon, WeaponType.Axe, 3);
+
+            string expected = $"{weapon.Name}\n      Required Level: {weapon.RequiredLevel}"
+                + $"\n      Weapon type: {weapon.WeaponType}\n      Weapon damage: {weapon.WeaponDamage}";
+
+            Assert.Equal(expected, weapon.ToString());
         }
     }
 }
