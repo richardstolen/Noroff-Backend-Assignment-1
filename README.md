@@ -1,10 +1,13 @@
 # Back-end Development_Assignment 1
 
 
+## To Do List 
+
 Appendix A:
-1. [x] Completed task
-1. [~] Inapplicable task
-1. [ ] Incomplete task
-   1. [x] Sub-task 1
-   1. [~] Sub-task 2
-   1. [ ] Sub-task 3
+1. [x] Introduction and overview
+2. [x] Hero attributes
+3. [x] Levelling attributes
+   1. [x] Mage attribute gain
+   2. [x] Ranger attribute gain
+   3. [x] Rogue attribute gain
+   4. [x] Warrior attribute gain
