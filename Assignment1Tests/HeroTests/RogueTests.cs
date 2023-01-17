@@ -1,6 +1,5 @@
-﻿using Back_end_Development_Assignment_1;
-using Back_end_Development_Assignment_1.Heroes;
-using Back_end_Development_Assignment_1.Items;
+﻿using Back_end_Development_Assignment_1.Heroes;
+using Back_end_Development_Assignment_1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1Tests.HeroTests
 {
-    public class RangerTests : IHeroClassesTests
+    public class RogueTests : IHeroClassesTests
     {
         /*
          * Tests for unique classes testing the unique default attributes and 
@@ -20,9 +19,9 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void Constructor_DefaultStrengthAttribute()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
-            int expected = 1;
+            int expected = 2;
 
             Assert.Equal(hero.LevelAttributes.Strength, expected);
         }
@@ -30,9 +29,9 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void Constructor_DefaultDexterityAttribute()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
-            int expected = 7;
+            int expected = 6;
 
             Assert.Equal(hero.LevelAttributes.Dexterity, expected);
         }
@@ -40,7 +39,7 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void Constructor_DefaultIntelligenceAttribute()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
             int expected = 1;
 
@@ -54,11 +53,11 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void LevelUp_UpdatedStrengthAttribute()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
             hero.levelUp();
 
-            int expected = 2;
+            int expected = 3;
 
             Assert.Equal(hero.LevelAttributes.Strength, expected);
         }
@@ -66,11 +65,11 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void LevelUp_UpdatedDexterityAttribute()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
             hero.levelUp();
 
-            int expected = 12;
+            int expected = 10;
 
             Assert.Equal(hero.LevelAttributes.Dexterity, expected);
         }
@@ -78,7 +77,7 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void LevelUp_UpdatedIntelligenceAttribute()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
             hero.levelUp();
 
@@ -94,7 +93,7 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void ValidArmorTypes_CheckValidArmorTypes_ShouldBeEqual()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
             List<ArmorType> expected = new List<ArmorType> { ArmorType.Leather, ArmorType.Mail };
 
@@ -104,9 +103,9 @@ namespace Assignment1Tests.HeroTests
         [Fact]
         public void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual()
         {
-            var hero = new Ranger("test");
+            var hero = new Rogue("test");
 
-            List<WeaponType> expected = new List<WeaponType> { WeaponType.Bow, WeaponType.Unarmed };
+            List<WeaponType> expected = new List<WeaponType> { WeaponType.Dagger, WeaponType.Sword, WeaponType.Unarmed };
 
             Assert.Equal(hero.ValidWeaponTypes, expected);
         }

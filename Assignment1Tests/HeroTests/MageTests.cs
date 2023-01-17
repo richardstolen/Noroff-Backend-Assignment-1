@@ -22,6 +22,7 @@ namespace Assignment1Tests.HeroTests
 
             Assert.Equal(mage.LevelAttributes.Strength, expected);
         }
+
         [Fact]
         public void Constructor_DefaultDexterityAttribute()
         {
@@ -31,6 +32,7 @@ namespace Assignment1Tests.HeroTests
 
             Assert.Equal(mage.LevelAttributes.Dexterity, expected);
         }
+
         [Fact]
         public void Constructor_DefaultIntelligenceAttribute()
         {

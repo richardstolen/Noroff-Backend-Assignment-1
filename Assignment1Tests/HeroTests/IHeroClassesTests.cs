@@ -14,9 +14,8 @@ namespace Assignment1Tests.HeroTests
         void LevelUp_UpdatedStrengthAttribute();
         void LevelUp_UpdatedDexterityAttribute();
         void LevelUp_UpdatedIntelligenceAttribute();
-        void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual();
-        void ValidWeaponTypes_CheckInValidWeaponTypes_ShouldThrowInvalidArmorException();
         void ValidArmorTypes_CheckValidArmorTypes_ShouldBeEqual();
-        void ValidArmorTypes_CheckInValidArmorTypes_ShouldThrowInvalidArmorException();
+        void ValidWeaponTypes_CheckValidWeaponTypes_ShouldBeEqual();
+
     }
 }
