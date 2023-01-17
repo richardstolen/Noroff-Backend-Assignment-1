@@ -27,9 +27,31 @@
 ### Appendix C: Unit Testing
 
 1. [ ] Introduction and overview
-   - [ ] When a Hero is created, it needs to have the correct name, level, and attributes.
-   - [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes.
+   - [ ] When a Hero is created, it needs to have the correct name, level, and attributes
+   - [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes
+      - [ ] Creation and leveling tests need to be written for each sub class
+      - [ ] A test to see if HeroAttribute is being added/increased correctly should also be written
+   - [x] When Weapon is created, it needs to have the correct name, required level, slot, weapon type, and damage
+   - [x] When Armor is created, it needs to have the correct name, required level, slot, armor type, and armor attributes
+   - [ ] A Hero should be able to equip a Weapon, the appropriate exceptions should be thrown if invalid (level requirement and type)
+   - [ ] A Hero should be able to equip Armor, the appropriate exceptions should be thrown if invalid (level requirement and type)
+   - [ ] Total attributes should be calculated correctly
+      - [ ] With no equipment
+      - [ ] With one piece of armor
+      - [ ] With two pieces of armor
+      - [ ] With a replaced piece of armor (equip armor, then equip new armor in the same slot)
+   - [ ] Hero damage should be calculated properly
+      - [ ] No weapon equipped
+      - [ ] Weapon equipped
+      - [ ] Replaced weapon equipped (equip a weapon then equip a new weapon)
+      - [ ] Weapon and armor equipped
+   - [ ] Heroes should display their state correctly
+
+2. [ ] Example single test walkthrough
 
 
+### Appendix D: Extensions and alternative approaches (OPTIONAL)
 
+1. [ ] Extending base functionality
 
+2. [ ] Alternative approach
