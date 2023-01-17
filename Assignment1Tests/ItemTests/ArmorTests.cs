@@ -70,5 +70,19 @@ namespace Assignment1Tests.ItemTests
             Assert.Equal(expected, armor.ToString());
         }
 
+        /*
+         * Armor attribute test
+         */
+
+        [Fact]
+        void ToString_ArmorAttributeAssertCorrectOutputToString_ShouldBeEqual()
+        {
+            ArmorAttribute attributes = new ArmorAttribute(1, 2, 3);
+
+            string expected = $"Strength: {attributes.Strength}\nDexterity: {attributes.Dexterity}\nIntelligence: {attributes.Intelligence}";
+
+            Assert.Equal(expected, attributes.ToString());
+        }
+
     }
 }

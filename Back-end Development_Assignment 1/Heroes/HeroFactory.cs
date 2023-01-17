@@ -23,7 +23,6 @@ namespace Back_end_Development_Assignment_1.Heroes
                 return new Rogue(name);
             }
             else
-
                 return new Warrior(name);
         }
     }
