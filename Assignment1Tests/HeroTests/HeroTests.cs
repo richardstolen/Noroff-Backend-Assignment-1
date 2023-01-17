@@ -19,6 +19,16 @@ namespace Assignment1Tests.HeroTests
          * Mage default attributes: str:1, dex:1, int:8
          */
 
+        /*
+        * ---------------------------------------------------------------------------------------
+        * Tests related to Appendix C: 1
+        * When creating a Hero, it needs to have the correct name, level and attributes
+        */
+
+        /// <summary>
+        /// Testing name for new Hero class
+        /// Appendix C: 1)
+        /// </summary>
         [Fact]
         void Constructor_TestCorrectName_ShouldBeEqual()
         {
@@ -28,6 +38,10 @@ namespace Assignment1Tests.HeroTests
             Assert.Equal(name, hero.Name);
         }
 
+        /// <summary>
+        /// Testing correct level for new Hero class
+        /// Appendix C: 1)
+        /// </summary>
         [Fact]
         void Constructor_TestCorrectLevel_ShouldBe1()
         {
