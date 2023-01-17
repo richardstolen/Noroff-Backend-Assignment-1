@@ -50,6 +50,10 @@ namespace Assignment1Tests.HeroTests
             Assert.Equal((int)1, hero.Level);
         }
 
+        /// <summary>
+        /// Testing correct level after two level ups for new Hero class
+        /// Appendix C: 2)
+        /// </summary>
         [Fact]
         void LevelUp_TestCorrectLevelAfter2LevelUps_ShouldBe3()
         {
@@ -63,6 +67,10 @@ namespace Assignment1Tests.HeroTests
             Assert.Equal(hero.Level, exceptedLevel);
         }
 
+        /// <summary>
+        /// Testing that a hero can equip valid armor
+        /// Appendix C: 6)
+        /// </summary>
         [Fact]
         void EquipArmor_EquippingValidArmor_ShouldNotThrowException()
         {
@@ -75,6 +83,10 @@ namespace Assignment1Tests.HeroTests
             Assert.Null(exception);
         }
 
+        /// <summary>
+        /// Testing that a hero can't equip invalid armor
+        /// Appendix C: 6)
+        /// </summary>
         [Fact]
         void EquipArmor_EquippingInValidArmor_ShouldThrowInvalidArmorException()
         {
@@ -85,6 +97,10 @@ namespace Assignment1Tests.HeroTests
             Assert.Throws<InvalidArmorException>(() => hero.equipArmor(chest));
         }
 
+        /// <summary>
+        /// Testing that a hero can equip valid weapon
+        /// Appendix C: 5)
+        /// </summary>
         [Fact]
         void EquipWeapon_EquippingValidWeapon_ShouldNotThrowException()
         {
@@ -97,6 +113,10 @@ namespace Assignment1Tests.HeroTests
             Assert.Null(exception);
         }
 
+        /// <summary>
+        /// Testing that a hero can't equip invalid weapon
+        /// Appendix C: 5)
+        /// </summary>
         [Fact]
         void EquipWeapon_EquippingInValidWeapon_ShouldThrowInvalidArmorException()
         {

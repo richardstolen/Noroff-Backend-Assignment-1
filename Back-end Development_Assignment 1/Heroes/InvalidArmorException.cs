@@ -17,9 +17,5 @@ namespace Back_end_Development_Assignment_1
         public InvalidArmorException(string message, Exception innerException) : base(message, innerException)
         {
         }
-
-        protected InvalidArmorException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
     }
 }
