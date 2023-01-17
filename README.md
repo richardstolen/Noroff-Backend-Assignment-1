@@ -26,9 +26,9 @@
 
 ### Appendix C: Unit Testing
 
-1. [] Introduction and overview
-   - [] When a Hero is created, it needs to have the correct name, level, and attributes.
-   - [] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes.
+1. [ ] Introduction and overview
+   - [ ] When a Hero is created, it needs to have the correct name, level, and attributes.
+   - [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes.
 
 
 
