@@ -38,11 +38,11 @@
       4. [x] When Armor is created, it needs to have the correct name, required level, slot, armor type, and armor attributes
       5. [ ] A Hero should be able to equip a Weapon, the appropriate exceptions should be thrown if invalid (level requirement and type)
       6. [ ] A Hero should be able to equip Armor, the appropriate exceptions should be thrown if invalid (level requirement and type)
-      7. [ ] Total attributes should be calculated correctly
-         1. [ ] With no equipment
-         2. [ ] With one piece of armor
-         3. [ ] With two pieces of armor
-         4. [ ] With a replaced piece of armor (equip armor, then equip new armor in the same slot)
+      7. [x] Total attributes should be calculated correctly
+         1. [x] With no equipment
+         2. [x] With one piece of armor
+         3. [x] With two pieces of armor
+         4. [x] With a replaced piece of armor (equip armor, then equip new armor in the same slot)
       8. [ ] Hero damage should be calculated properly
          1. [ ] No weapon equipped
          2. [ ] Weapon equipped
