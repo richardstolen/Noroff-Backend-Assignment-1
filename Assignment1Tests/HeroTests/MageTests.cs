@@ -5,7 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Assignment1Tests.HeroTests
 {
-    public class MageTests : IHeroClassesTests
+    public class MageTests
     {
         /*
          * Tests related to the default attributes when creating a hero
@@ -85,29 +85,6 @@ namespace Assignment1Tests.HeroTests
             Assert.Throws<InvalidArmorException>(() => mage.equipArmor(armor));
         }
 
-        public void LevelUp_UpdatedDexterityAttribute()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void LevelUp_UpdatedIntelligenceAttribute()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ValidWeaponTypes_CheckInValidWeaponTypes_ShouldThrowInvalidArmorException()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ValidArmorTypes_CheckValidArmorTypes_ShouldBeEqual()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ValidArmorTypes_CheckInValidArmorTypes_ShouldThrowInvalidArmorException()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
