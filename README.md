@@ -31,13 +31,13 @@
 
 1. [ ] Introduction and overview
       1. [x] When a Hero is created, it needs to have the correct name, level, and attributes
-      2. [ ] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes
-         1. [ ] Creation and leveling tests need to be written for each sub class
-         2. [ ] A test to see if HeroAttribute is being added/increased correctly should also be written
+      2. [x] When a Heroes level is increased, it needs to increment by the correct amount and result in the correct attributes
+         1. [x] Creation and leveling tests need to be written for each sub class
+         2. [x] A test to see if HeroAttribute is being added/increased correctly should also be written
       3. [x] When Weapon is created, it needs to have the correct name, required level, slot, weapon type, and damage
       4. [x] When Armor is created, it needs to have the correct name, required level, slot, armor type, and armor attributes
-      5. [ ] A Hero should be able to equip a Weapon, the appropriate exceptions should be thrown if invalid (level requirement and type)
-      6. [ ] A Hero should be able to equip Armor, the appropriate exceptions should be thrown if invalid (level requirement and type)
+      5. [x] A Hero should be able to equip a Weapon, the appropriate exceptions should be thrown if invalid (level requirement and type)
+      6. [x] A Hero should be able to equip Armor, the appropriate exceptions should be thrown if invalid (level requirement and type)
       7. [x] Total attributes should be calculated correctly
          1. [x] With no equipment
          2. [x] With one piece of armor
