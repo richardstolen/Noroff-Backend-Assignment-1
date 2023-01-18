@@ -202,6 +202,97 @@ namespace Assignment1Tests.HeroTests
 
             Assert.Equal(expected.ToString(), hero.totalAttributes().ToString());
         }
+
+        /*
+         * ---------------------------------------------------------------------------------------
+         * Tests related to Appendix C: 8
+         * Checking if hero damage are calculated correctly with different types of weapon
+         * and weapon swapping.
+         */
+
+        /// <summary>
+        /// Test related to Appendix C: 8.1
+        /// </summary>
+        [Fact]
+        void CalculateDamage_CalculatingDamageWithNoWeaponEquipped_ShouldBeDefault()
+        {
+            var hero = new Mage("test");
+
+            double expected = 1;
+
+            Assert.Equal(expected, hero.damage());
+        }
+
+        /// <summary>
+        /// Test related to Appendix C: 8.2
+        /// </summary>
+        [Fact]
+        void CalculateDamage_CalculatingDamageWithWeaponEquipped_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            Weapon weapon = new Weapon("Rare Staff", 1, Slot.Weapon, WeaponType.Staff, 5);
+
+            hero.equipWeapon(weapon);
+
+            // Here is calculation for mage damage
+            // Damage = Weapon damage * (1 + Intelligence / 100.0)
+            // Damage = 5 * (1 + 8 / 100)
+            // Damage = 5,4
+
+            double expected = 5.4;
+
+            Assert.Equal(expected, hero.damage());
+        }
+
+        /// <summary>
+        /// Test related to Appendix C: 8.3
+        /// </summary>
+        [Fact]
+        void CalculateDamage_CalculatingDamageWithWeaponAfterReplacingWeapon_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            Weapon weapon1 = new Weapon("Rare Staff", 1, Slot.Weapon, WeaponType.Staff, 5);
+            Weapon weapon2 = new Weapon("Rare Wand", 1, Slot.Weapon, WeaponType.Wand, 3);
+
+            hero.equipWeapon(weapon1);
+            hero.equipWeapon(weapon2);
+
+            // Here is calculation for mage damage
+            // Damage = Weapon damage * (1 + Intelligence / 100.0)
+            // Damage = 3 * (1 + 8 / 100)
+            // Damage = 3,24
+
+            double expected = 3.24;
+
+            Assert.Equal(expected, hero.damage());
+        }
+
+        /// <summary>
+        /// Test related to Appendix C: 8.4
+        /// </summary>
+        [Fact]
+        void CalculateDamage_CalculatingDamageWithWeaponAndArmorEquipped_ShouldBeEqual()
+        {
+            var hero = new Mage("test");
+
+            Weapon weapon = new Weapon("Rare Wand", 1, Slot.Weapon, WeaponType.Wand, 3);
+            Armor armor = new Armor("Common Cloth Chest", 1, Slot.Body, ArmorType.Cloth, new ArmorAttribute(1, 2, 2));
+
+            hero.equipWeapon(weapon);
+            hero.equipArmor(armor);
+
+            // Here is calculation for mage damage
+            // Damage = Weapon damage * (1 + Intelligence / 100.0)
+            // Intelligence is 8 + Armor int which is 2 = 10
+            // Damage = 3 * (1 + 10 / 100)
+            // Damage = 3,3
+
+            double expected = 3.3;
+
+            Assert.Equal(expected, hero.damage());
+        }
     }
 }
 

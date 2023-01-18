@@ -125,7 +125,7 @@ namespace Back_end_Development_Assignment_1
         /// Uses the calculate damage by getting the totalattributes from gear and calling calculateDamage method
         /// Prints out the damage to the console
         /// </summary>
-        public void damage()
+        public double damage()
         {
             Weapon weapon = null;
             foreach (var dict in EquippedItems)
@@ -137,9 +137,9 @@ namespace Back_end_Development_Assignment_1
             }
 
             HeroAttribute attributes = totalAttributes();
-            double damage = calculateDamage(weapon, attributes);
 
-            Console.WriteLine($"\nYou did {damage} damage");
+            double damage = calculateDamage(weapon, attributes);
+            return damage;
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Back_end_Development_Assignment_1
         /// <param name="weapon"></param>
         /// <param name="attributes"></param>
         /// <returns>double damage</returns>
-        private double calculateDamage(Weapon weapon, HeroAttribute attributes)
+        public double calculateDamage(Weapon weapon, HeroAttribute attributes)
         {
             var heroClass = Enum.Parse(typeof(HeroClasses), this.GetType().Name);
 
@@ -156,22 +156,21 @@ namespace Back_end_Development_Assignment_1
             {
                 if (heroClass.Equals(HeroClasses.Mage))
                 {
-                    return weapon.WeaponDamage * (1 + (attributes.Intelligence / 100.0));
+                    return Math.Round(weapon.WeaponDamage * (1 + (attributes.Intelligence / 100.0)), 2);
                 }
                 else if (heroClass.Equals(HeroClasses.Ranger))
                 {
-                    return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
+                    return Math.Round(weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0)), 2);
                 }
                 else if (heroClass.Equals(HeroClasses.Rogue))
                 {
-                    return weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0));
+                    return Math.Round(weapon.WeaponDamage * (1 + (attributes.Dexterity / 100.0)), 2);
                 }
                 else if (heroClass.Equals(HeroClasses.Warrior))
                 {
-                    return weapon.WeaponDamage * (1 + (attributes.Strength / 100.0));
+                    return Math.Round(weapon.WeaponDamage * (1 + (attributes.Strength / 100.0)), 2);
                 }
             }
-
             return 1;
         }
 
@@ -199,6 +198,10 @@ namespace Back_end_Development_Assignment_1
             }
             return attributesWithArmor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual void displayHero()
         {
             HeroAttribute attributes = totalAttributes();
