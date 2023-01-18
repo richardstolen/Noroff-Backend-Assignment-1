@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameController\Game.cs" />
+    <Compile Include="GameController\GameFlow.cs" />
+    <Compile Include="GameController\HeroCreation.cs" />
     <Compile Include="Heroes\HeroClasses.cs" />
     <Compile Include="Heroes\HeroFactory.cs" />
     <Compile Include="Heroes\InvalidArmorException.cs" />
