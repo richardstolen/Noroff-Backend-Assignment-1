@@ -28,16 +28,31 @@ namespace Back_end_Development_Assignment_1
             equipNoItems();
         }
 
+
+        /// <summary>
+        /// Sets the armor types a class can use
+        /// </summary>
+        /// <param name="armorTypes"></param>
         public void setValidArmorTypes(List<ArmorType> armorTypes)
         {
             ValidArmorTypes = armorTypes;
         }
 
+
+        /// <summary>
+        /// Sets the weapon types a class can use
+        /// </summary>
+        /// <param name="weaponTypes"></param>
         public void setValidWeaponTypes(List<WeaponType> weaponTypes)
         {
             ValidWeaponTypes = weaponTypes;
         }
 
+
+        /// <summary>
+        /// Level up method, increments level by 1
+        /// This method is overrided in every class, because every class get new unique attributes when leveling up
+        /// </summary>
         public virtual void levelUp()
         {
             Level++;
