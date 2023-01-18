@@ -28,11 +28,12 @@ namespace Back_end_Development_Assignment_1.Enemies
             double calculatedDamage = Damage / (1 + hero.totalAttributes().Strength / 100);
 
             // Critical hit 10 %
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(100);
+            Random random = new Random();
+            int randomNumber = random.Next(100);
 
             if (randomNumber < 10)
             {
+                Console.WriteLine("The enemy did a critical hit!");
                 calculatedDamage *= 2;
             }
 

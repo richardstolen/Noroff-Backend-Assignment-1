@@ -30,7 +30,7 @@ namespace Back_end_Development_Assignment_1
             Level = 1;
             Health = 100;
             Experience = 0;
-            equipNoItems();
+            equipItemsStarterGear();
         }
 
 
@@ -62,6 +62,7 @@ namespace Back_end_Development_Assignment_1
             if (Experience >= 100)
             {
                 levelUp();
+                Experience = 0 + exp - 100;
                 return true;
             }
             else
@@ -76,6 +77,7 @@ namespace Back_end_Development_Assignment_1
         public virtual void levelUp()
         {
             Level++;
+            Console.WriteLine("You leveled up!!");
         }
 
         /// <summary>
@@ -159,6 +161,16 @@ namespace Back_end_Development_Assignment_1
             HeroAttribute attributes = totalAttributes();
 
             double damage = calculateDamage(weapon, attributes);
+
+            // Critical hit 10 %
+            Random rnd = new Random();
+            int randomNumber = rnd.Next(100);
+
+            if (randomNumber < 50)
+            {
+                Console.WriteLine("\nYou did a critical hit!");
+                damage *= 2;
+            }
             return damage;
         }
 
@@ -200,7 +212,7 @@ namespace Back_end_Development_Assignment_1
         /// <returns>HeroAttribute object</returns>
         public HeroAttribute totalAttributes()
         {
-            HeroAttribute attributesWithArmor = LevelAttributes;
+            HeroAttribute attributesWithArmor = new HeroAttribute(LevelAttributes.Strength, LevelAttributes.Dexterity, LevelAttributes.Intelligence);
 
             foreach (var dict in EquippedItems)
             {

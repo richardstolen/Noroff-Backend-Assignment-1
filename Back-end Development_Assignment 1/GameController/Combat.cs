@@ -31,6 +31,18 @@ namespace Back_end_Development_Assignment_1.GameController
 
             while (fighting)
             {
+                if (Hero.Health <= 0)
+                {
+                    fighting = false;
+                    break;
+
+                }
+                if (Enemy.Health <= 0)
+                {
+                    heroWin = true;
+                    fighting = false;
+                    break;
+                }
 
                 double heroDmg = Hero.damage();
                 double enemyDmg = Enemy.attack(Hero);
@@ -38,23 +50,15 @@ namespace Back_end_Development_Assignment_1.GameController
                 Hero.Health -= enemyDmg;
                 Enemy.Health -= heroDmg;
 
-                Console.WriteLine($"Your autoattack did {heroDmg} damage, the {Enemy.Name}'s health is now {Enemy.Health}");
-                Thread.Sleep(1000);
-                Console.WriteLine($"The enemy attack did {enemyDmg} damage, your health is now {Hero.Health}");
+                Console.WriteLine($"Your autoattack did {heroDmg} damage, the {Enemy.Name}'s health is now {Enemy.Health}\n");
 
+                Console.WriteLine($"The enemy attack did {enemyDmg} damage, your health is now {Hero.Health}");
+                Thread.Sleep(500);
                 Console.WriteLine("\n Press any key to continue the fight");
                 Console.ReadKey();
+                Console.Clear();
 
-                if (Hero.Health <= 0)
-                {
-                    fighting = false;
 
-                }
-                if (Enemy.Health <= 0)
-                {
-                    heroWin = true;
-                    fighting = false;
-                }
             }
             return heroWin;
         }

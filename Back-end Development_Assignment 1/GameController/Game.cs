@@ -26,11 +26,27 @@ namespace Back_end_Development_Assignment_1.GameController
                 {
                     Hero = GameFlow.createHero();
                 }
-                Console.WriteLine("You created a hero");
-                Console.ReadKey();
 
+                AngryBear enemy = new AngryBear(1, 101, 10, 3, "Angry Bear");
                 Combat combat = new Combat(Hero, enemy);
-                combat.fight();
+                bool heroWin = combat.fight();
+
+                if (heroWin)
+                {
+                    Console.WriteLine("You killed the enemy!");
+                    Console.WriteLine("You received " + enemy.ExperienceDrop + " experience");
+                    Hero.addExperience(enemy.ExperienceDrop);
+
+                    Console.WriteLine("Press any key to fight a new enemy");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("Game over, you died");
+                    Console.WriteLine("Press any key to start again");
+                    Console.ReadKey();
+                    startGame();
+                }
             }
         }
 
