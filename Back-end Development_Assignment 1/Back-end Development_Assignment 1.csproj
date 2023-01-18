@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enemies\AngryBear.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="GameController\Combat.cs" />
     <Compile Include="GameController\Game.cs" />
     <Compile Include="GameController\GameFlow.cs" />
     <Compile Include="GameController\HeroCreation.cs" />

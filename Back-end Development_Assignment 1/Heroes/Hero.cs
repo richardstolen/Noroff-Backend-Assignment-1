@@ -16,6 +16,9 @@ namespace Back_end_Development_Assignment_1
     {
         public string Name { get; set; }
         public int Level { get; set; }
+        public double Experience { get; set; }
+
+        public double Health { get; set; }
         public HeroAttribute LevelAttributes { get; set; }
         public List<Dictionary<Slot, Item>> EquippedItems { get; set; }
         public List<WeaponType> ValidWeaponTypes { get; set; }
@@ -25,6 +28,8 @@ namespace Back_end_Development_Assignment_1
         {
             Name = name;
             Level = 1;
+            Health = 100;
+            Experience = 0;
             equipNoItems();
         }
 
@@ -50,7 +55,20 @@ namespace Back_end_Development_Assignment_1
             ValidWeaponTypes = weaponTypes;
         }
 
+        public bool addExperience(double exp)
+        {
+            Experience += exp;
 
+            if (Experience >= 100)
+            {
+                levelUp();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Level up method, increments level by 1
         /// This method is overrided in every class, because every class get new unique attributes when leveling up

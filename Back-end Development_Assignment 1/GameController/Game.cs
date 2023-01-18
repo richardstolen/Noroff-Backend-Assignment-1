@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Back_end_Development_Assignment_1.Enemies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ namespace Back_end_Development_Assignment_1.GameController
 
         public bool isRunning { get; set; } = false;
 
+
+
+        AngryBear enemy = new AngryBear(1, 25, 20, 3, "Angry Bear");
+
         public void startGame()
         {
             isRunning = true;
@@ -23,6 +28,9 @@ namespace Back_end_Development_Assignment_1.GameController
                 }
                 Console.WriteLine("You created a hero");
                 Console.ReadKey();
+
+                Combat combat = new Combat(Hero, enemy);
+                combat.fight();
             }
         }
 
