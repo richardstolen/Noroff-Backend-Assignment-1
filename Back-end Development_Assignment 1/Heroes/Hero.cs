@@ -43,6 +43,11 @@ namespace Back_end_Development_Assignment_1
             Level++;
         }
 
+        /// <summary>
+        /// Equips a weapon
+        /// </summary>
+        /// <param name="weapon"></param>
+        /// <exception cref="InvalidArmorException"></exception>
         public void equipWeapon(Weapon weapon)
         {
             try
@@ -101,6 +106,10 @@ namespace Back_end_Development_Assignment_1
             }
         }
 
+        /// <summary>
+        /// Uses the calculate damage by getting the totalattributes from gear and calling calculateDamage method
+        /// Prints out the damage to the console
+        /// </summary>
         public void damage()
         {
             Weapon weapon = null;
@@ -118,6 +127,12 @@ namespace Back_end_Development_Assignment_1
             Console.WriteLine($"\nYou did {damage} damage");
         }
 
+        /// <summary>
+        /// Calculates the damage a hero can do given a weapon and attributes, return 1 damage if no weapon is equipped
+        /// </summary>
+        /// <param name="weapon"></param>
+        /// <param name="attributes"></param>
+        /// <returns>double damage</returns>
         private double calculateDamage(Weapon weapon, HeroAttribute attributes)
         {
             var heroClass = Enum.Parse(typeof(HeroClasses), this.GetType().Name);
@@ -145,6 +160,10 @@ namespace Back_end_Development_Assignment_1
             return 1;
         }
 
+        /// <summary>
+        /// Calculates the total attributes including attributes from hero and items equipped
+        /// </summary>
+        /// <returns>HeroAttribute object</returns>
         public HeroAttribute totalAttributes()
         {
             HeroAttribute attributesWithArmor = LevelAttributes;
@@ -188,8 +207,6 @@ namespace Back_end_Development_Assignment_1
             Console.WriteLine(sb);
         }
 
-
-
         /// <summary>
         /// Initialize the equipped item list with correct slots and with starter gear that every class can use.
         /// Used in the constructor
@@ -217,6 +234,10 @@ namespace Back_end_Development_Assignment_1
             };
         }
 
+        /// <summary>
+        /// Initialize the equipped item list with correct slots but with zero gear equipped.
+        /// Used in the constructor
+        /// </summary>
         public void equipNoItems()
         {
             EquippedItems = new List<Dictionary<Slot, Item>>()
