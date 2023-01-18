@@ -31,6 +31,7 @@ namespace Back_end_Development_Assignment_1
 
         /// <summary>
         /// Sets the armor types a class can use
+        /// Is used in every heroclass constructor with the valid armor types for the specific class
         /// </summary>
         /// <param name="armorTypes"></param>
         public void setValidArmorTypes(List<ArmorType> armorTypes)
@@ -41,6 +42,7 @@ namespace Back_end_Development_Assignment_1
 
         /// <summary>
         /// Sets the weapon types a class can use
+        /// Is used in every heroclass constructor with the valid waepon types for the specific class
         /// </summary>
         /// <param name="weaponTypes"></param>
         public void setValidWeaponTypes(List<WeaponType> weaponTypes)
@@ -200,7 +202,7 @@ namespace Back_end_Development_Assignment_1
         }
 
         /// <summary>
-        /// 
+        /// Method that display the hero with all its stats and equipment to the console
         /// </summary>
         public virtual void displayHero()
         {
@@ -227,7 +229,7 @@ namespace Back_end_Development_Assignment_1
 
         /// <summary>
         /// Initialize the equipped item list with correct slots and with starter gear that every class can use.
-        /// Used in the constructor
+        /// Currently not used due to having to test with heroes not wearing any items. 
         /// </summary>
         public void equipItemsStarterGear()
         {
