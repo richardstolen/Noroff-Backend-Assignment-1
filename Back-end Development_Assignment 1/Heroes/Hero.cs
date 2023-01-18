@@ -28,23 +28,39 @@ namespace Back_end_Development_Assignment_1
             equipNoItems();
         }
 
+
+        /// <summary>
+        /// Sets the armor types a class can use
+        /// </summary>
+        /// <param name="armorTypes"></param>
         public void setValidArmorTypes(List<ArmorType> armorTypes)
         {
             ValidArmorTypes = armorTypes;
         }
 
+
+        /// <summary>
+        /// Sets the weapon types a class can use
+        /// </summary>
+        /// <param name="weaponTypes"></param>
         public void setValidWeaponTypes(List<WeaponType> weaponTypes)
         {
             ValidWeaponTypes = weaponTypes;
         }
 
+
+        /// <summary>
+        /// Level up method, increments level by 1
+        /// This method is overrided in every class, because every class get new unique attributes when leveling up
+        /// </summary>
         public virtual void levelUp()
         {
             Level++;
         }
 
+
         /// <summary>
-        /// Equips a weapon
+        /// Equips a weapon, replacing the old one
         /// </summary>
         /// <param name="weapon"></param>
         /// <exception cref="InvalidArmorException"></exception>
@@ -106,6 +122,7 @@ namespace Back_end_Development_Assignment_1
             }
         }
 
+
         /// <summary>
         /// Uses the calculate damage by getting the totalattributes from gear and calling calculateDamage method
         /// Prints out the damage to the console
@@ -126,6 +143,7 @@ namespace Back_end_Development_Assignment_1
 
             Console.WriteLine($"\nYou did {damage} damage");
         }
+
 
         /// <summary>
         /// Calculates the damage a hero can do given a weapon and attributes, return 1 damage if no weapon is equipped
@@ -159,6 +177,7 @@ namespace Back_end_Development_Assignment_1
 
             return 1;
         }
+
 
         /// <summary>
         /// Calculates the total attributes including attributes from hero and items equipped
@@ -207,6 +226,7 @@ namespace Back_end_Development_Assignment_1
             Console.WriteLine(sb);
         }
 
+
         /// <summary>
         /// Initialize the equipped item list with correct slots and with starter gear that every class can use.
         /// Used in the constructor
@@ -233,6 +253,7 @@ namespace Back_end_Development_Assignment_1
                 },
             };
         }
+
 
         /// <summary>
         /// Initialize the equipped item list with correct slots but with zero gear equipped.
