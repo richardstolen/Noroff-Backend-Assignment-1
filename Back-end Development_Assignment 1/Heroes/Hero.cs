@@ -21,6 +21,11 @@ namespace Back_end_Development_Assignment_1
         public List<WeaponType> ValidWeaponTypes { get; set; }
         public List<ArmorType> ValidArmorTypes { get; set; }
 
+        /// <summary>
+        /// Constructor that takes in a name
+        /// Sets level to 1 and equips the correct slots but with no items in them
+        /// </summary>
+        /// <param name="name"></param>
         public Hero(string name)
         {
             Name = name;
