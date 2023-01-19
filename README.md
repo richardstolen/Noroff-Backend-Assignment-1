@@ -77,6 +77,13 @@ Branches:
 
 Using Coverlet
 
+Prioritized completing the test cases that were required in the assignment, rather than going for 90-100 %.
+
 ![alt text](codecoveragesummary.png "Code coverage")
 
-Prioritized completing the test cases that were required in the assignment, rather than going for 90-100 %.
+
+## Class diagram
+
+Decided to include the class diagram i made before starting to code. Have not updated it after writing code so it is not accurate.
+
+![alt text](figma_initial_class_diagram.png "Class diagram")
