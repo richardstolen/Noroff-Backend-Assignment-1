@@ -11,11 +11,11 @@ Author: Richard Stølen
 
 Branches:
 - main : Contains the required code for the assignment. 
-- extending-base-functionality : 
-   Experimental branch, contains some extra stuff:
-      - Main menu where you can create a hero
-      - Simple combat system.
-      - An unsuccesful attempt at saving the current game to a CSV file.
+- extending-base-functionality : Experimental branch, contains some extra stuff:
+   - Main menu where you can create a hero
+   - Simple combat system.
+   - An unsuccesful attempt at saving the current game to a CSV file.
+
 
 
 ## To Do List 
