@@ -28,5 +28,11 @@ namespace Back_end_Development_Assignment_1.GameController
 
             return hero;
         }
+
+
+        public static void mainMenu()
+        {
+
+        }
     }
 }
