@@ -73,4 +73,4 @@ Branches:
 2. [ ] Alternative approach
 
 
-
+![alt text](codecoveragesummary.png "Code coverage")
