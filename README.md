@@ -73,4 +73,10 @@ Branches:
 2. [ ] Alternative approach
 
 
+## Code coverage
+
+Using Coverlet
+
 ![alt text](codecoveragesummary.png "Code coverage")
+
+Prioritized completing the test cases that were required in the assignment, rather than going for 90-100 %.
