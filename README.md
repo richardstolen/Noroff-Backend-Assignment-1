@@ -1,7 +1,7 @@
 # Back-end Development_Assignment 1
 
 
-![alt text](assignment1_character_selection_screen.png "Title Text")
+![alt text](assignment1_character_selection_screen.png "Character selection screen")
 
 
 ## To Do List 
